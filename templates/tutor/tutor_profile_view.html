@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><h6 style="font-weight: bold;">MOTOR MANTHRA</h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/tutor">>BACK</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-5">
+                    <div class="contact__form">
+                        <h4>View Profile</h4>
+
+                        <table class="table table-bordered table-striped table-hover">
+                            {% for dri in tutor_appview  %}
+                            
+                            <tr>
+                                
+                                <td rowspan='13' align='center'><img src="{{ dri.image.url }}" style="width: 250px; height: 265px;"></td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Name</th>
+                                <td>{{ dri.user.first_name}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Contact</th>
+                                <td>{{ dri.phone}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Email</th>
+                                <td>{{ dri.user.email}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Date Of Birth</th>
+                                <td>{{ dri.DateOfBirth}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Gender</th>
+                                <td>{{ dri.gender}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Qualification</th>
+                                <td>{{ dri.qualification}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Address</th>
+                                <td>{{ dri.address}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">District</th>
+                                <td>{{ dri.district}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">State</th>
+                                <td>{{ dri.state}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Pincode</th>
+                                <td>{{ dri.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">Experience</th>
+                                <td>{{ dri.experience}}</td>
+                            </tr>
+                            <tr>
+                                <th class="info" style="background-color: #ffc107;">About</th>
+                                <td>{{ dri.about}}</td>
+                            </tr>
+                            
+
+                            {% comment %} <th class="info" style="background-color: #ffc107;">Approve</th>
+                            <th class="info" style="background-color: #ffc107;">Reject</th> {% endcomment %}
+                            
+                           
+                             {% comment %} <tr>
+                            
+                                <td>{{ dri.phone}}</td> {% endcomment %}
+                                {% comment %} <td>{{ dri.user.email}}</td> {% endcomment %}
+
+
+                             {% comment %} <td colspan='3' align='center'><a href="#" class=" btn btn-success">Edit</a></td> {% endcomment %}
+                                {% comment %} <td><a href="reject?id={{ dri.user_id}}" class=" btn btn-danger">Reject</a></td> {% endcomment %}
+
+                            {% comment %} </tr> {% endcomment %}
+
+                                {% endfor %}
+                        </table>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+
+</body>
+
+</html>

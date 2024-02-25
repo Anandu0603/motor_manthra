@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><h6 style="font-weight: bold;">MOTOR MANTHRA</h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/admin/vehicle_view">>BACK</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-5">
+                    <div class="contact__form">
+                        <h4>Add Vehicle Details</h4>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                
+                                <div class="col-lg-7">
+                                    <label style="color:green;">Image Of RC Book</label>
+                                    <input type="file" placeholder="Image RC Book" name="image_rc">
+                                </div>
+
+                                <div class="col-lg-7">
+                                    <label style="color:green;">Image Of  Vehicle Insurance</label>
+                                    <input type="file" placeholder="Image Insurance" name="image_insurance">
+                                </div>
+
+                                <div class="col-lg-7">
+                                    <input type="text" placeholder="Vehicle Register Number" name="register_no">
+                                </div>
+                                
+                                <div class="col-lg-7">
+                                    <select name="vehicle_type">
+                                        <option>--Select Vehicle--</option>
+                                        <option>Car</option>
+                                        <option>Scooter</option>
+                                        <option>Auto</option>
+                                        
+                                      
+
+                                    </select>
+                                </div>
+                                {% comment %} <div class="col-lg-7">
+                                    <input type="text" placeholder="Vehicle Type " name="vehicle_type">
+                                </div> {% endcomment %}
+
+                                <div class="col-lg-7">
+                                <button type="submit" class="btn btn-primary">ADD</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Contact Section End -->
+{% comment %} <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-5">
+                    <div class="contact__form">
+                        <h4>View Package Details </h4>
+
+                        <table class="table table-bordered table-striped table-hover">
+
+<th class="info" style="background-color: #ffc107;">Package Type</th>
+<th class="info" style="background-color: #ffc107;">Duration</th>
+<th class="info" style="background-color: #ffc107;">Price</th>
+<th class="info" style="background-color: #ffc107;">Update</th>
+
+
+
+
+{% for dri in veh_view  %}
+
+<tr>
+    <td>{{ dri.name }}</td>
+    <td>{{ dri.duration }}</td>
+
+    <td>{{ dri.price }}</td>
+    <td><a href="reject1?id={{ dri.id}}" class=" btn btn-danger">Update</a></td>
+
+
+
+
+</tr>
+{% endfor %}
+</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> {% endcomment %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+    <!-- Hero Section Begin -->
+    <section class="hero set-bg" data-setbg="{% static 'img/hero-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="hero__text">
+<!--                        <h5>Admin</h5>-->
+                        <h2>Admin</h2>
+<!--                        <a href="#" class="primary-btn">Contact us</a>-->
+<!--                        <a href="#" class="primary-btn second-bg">See Courses</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+{% endblock %}

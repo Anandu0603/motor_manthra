@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><h6 style="font-weight: bold;">MOTOR MANTHRA</h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/admin">>BACK</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <!-- Contact Section Begin -->
+     <section class="contact spad">
+        <div class="container">
+            <div class="column">
+                <div class="col-lg-25 row-md-5">
+                    <div class="contact__form">
+                        <a href="Add_vehicle" class="btn btn-primary">ADD VEHICLE</a><br><br>
+                        <table class="table table-bordered table-striped table-hover">
+
+<th class="info" style="background-color: #00FF00;">Insurance Image</th>
+<th class="info" style="background-color: #00FF00;">RC Book Image</th>
+<th class="info" style="background-color: #00FF00;">Vehile REgister no.</th>
+<th class="info" style="background-color: #00FF00;">Vehicle Type</th>
+<th class="info" style="background-color: #00FF00;">Vehicle Status</th>
+
+
+
+{% for dri in veh_view  %}
+<tr>
+    <td><img src="{{ dri.image_insurance.url }}" style="width: 115px; height: 115px;"></td>
+    <td><img src="{{ dri.image_rc.url }}" style="width: 115px; height: 115px;"></td>
+    <td>{{ dri.register_no }}</td>
+    <td>{{ dri.vehicle_type }}</td>
+    <td>{{ dri.v_status }}</td>
+
+
+
+</tr>
+{% endfor %}
+</table>
+            {% comment %} {% for dri in veh_view  %} {% endcomment %}
+             {% comment %} <div class="column">
+               
+                
+                <div class="card" style="width: 25rem;">
+                    <img src="{{ dri.student_id.image.url }}" style="width: 250px; height: 265px;"class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dri.student_id.user.first_name }}</h5>
+                    
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ dri.package.name }}</li>
+                    <li class="list-group-item">{{ dri.package.duration }}</li>
+                    <li class="list-group-item">{{ dri.status }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-success">View Tutor</a>
+                        <a href="#" class="btn btn-primary">Allot Tutor</a>
+                    </div>
+                </div>
+            </div>
+        </div>  {% endcomment %}
+        {% comment %} <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{ dri.image_rc.u }}" style="width: 250px; height: 265px;" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ dri.image_rc }}</h5>
+                    <p class="card-text">{{ dri.package.name }}</p>
+                    <p class="card-text">{{ dri.package.duration }}</p>
+                    <p class="card-text">{{ dri.status }}</p>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-success">View Tutor</a>
+                        <a href="#" class="btn btn-primary">Allot Tutor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    h5< class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>{% endcomment %}
+            {% comment %} {% endfor %} {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+    <!-- Contact Section End -->
+    
+
+</body>
+
+</html>

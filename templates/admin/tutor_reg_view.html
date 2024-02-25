@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><h6 style="font-weight: bold;">MOTOR MANTHRA</h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/admin">>BACK</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-5">
+                    <div class="contact__form">
+                        <h4>View Tutor</h4>
+
+                        <table class="table table-bordered table-striped table-hover">
+
+<th class="info" style="background-color: #00FF00;">TUTOR NAME</th>
+<th class="info" style="background-color: #00FF00;">CONTACT NUMBER</th>
+<th class="info" style="background-color: #00FF00;">EMAIL ID</th>
+<th colspan="2" class="info" style="background-color: #00FF00;">ACTION</th>
+
+{% for dri in tutor_view  %}
+
+<tr>
+    <td>{{ dri.user.first_name}}</td>
+    <td>{{ dri.phone}}</td>
+    <td>{{ dri.user.email}}</td>
+
+
+ <td><a href="approve?id={{ dri.user_id}}" class=" btn btn-success">Approve</a>
+    <td><a href="reject?id={{ dri.user_id}}" class=" btn btn-danger">Reject</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+
+</body>
+
+</html>

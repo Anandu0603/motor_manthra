@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><h6 style="font-weight: bold;">MOTOR MANTHRA</h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/tutor">>BACK</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-5">
+                    <div class="contact__form">
+                        <h4>Tutor Profile Update</h4>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input type="file" placeholder="Image" name="image">
+                                </div>
+                                <div class="col-lg-7">
+                                    <input type="text" value="{{edit_t.user.first_name}}" placeholder="Tutor Name" name="name">
+                                </div>
+                                <div class="col-lg-7">
+                                    <input type="text" value="{{edit_t.phone}}" placeholder="Enter the Contact No" name="phone">
+                                </div>
+                                <div class="col-lg-7">
+                                    <input type="email" value="{{edit_t.user.email}}" placeholder="Enter the Email" name="email">
+                                </div><br>
+                                <div class="col-lg-7">
+                                    <label>Date Of Birth</label>
+                                    <input type="date" name="dob" placeholder="Date Of Birth" required/>
+                                  
+                                  
+                                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                                    <h6 class="mb-0 me-4">Gender: </h6>
+                  
+                                    <div class="form-check form-check-inline mb-0">
+                                      <input name="gender" type="radio"
+                                        value="Female" required/>Female
+                                    </div>
+                  
+                                    <div class="form-check form-check-inline mb-0">
+                                      <input  name="gender" type="radio"
+                                        value="Male" required/>Male
+                                    </div>
+                  
+                                    <div class="form-check form-check-inline mb-0">
+                                      <input name="gender" type="radio"
+                                        value="Other" required/>Other
+                                    </div>
+                                </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" placeholder="Qualification" name="qualification">
+                                    </div>
+                                    <div class="col-lg-7">
+                                    
+                                    <textarea placeholder="Enter the Address" name="address"></textarea>
+                                    </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" name="district" placeholder="Enter the District" required/>
+                                    
+                                  </div>
+            
+                                  <div class="col-lg-7">
+                                    <input type="text" name="state" placeholder="Enter the State" required/>
+                                    
+                                  </div>
+                  
+                                  <div class="col-lg-7">
+                                    <input type="text" name="pincode" placeholder="Enter the Pincode" pattern="[0-9]{6}" required/>
+                                    
+                                  </div>
+                                  
+                                
+                                <div class="col-lg-7">
+                                    <input type="text" placeholder="Experience" name="experience">
+                                </div>
+                                <div class="col-lg-7">
+                                    <textarea placeholder="Tell About You" name="about"></textarea>
+                                </div>
+                                <input type="hidden" placeholder="id" value="{{edit_t.id}}" name="id">
+                                <input type="hidden" placeholder="id2" value="{{edit_t.user.id}}"name="id2">
+
+                                <div class="col-lg-7">
+                                <button type="submit" class="site-btn">Save & Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+
+</body>
+
+</html>

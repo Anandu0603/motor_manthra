@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><h6 style="font-weight: bold;">MOTOR MANTHRA</h6></a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/admin">>BACK</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="column">
+                <div class="col-lg-8 row-md-5">
+                    <div class="contact__form">
+                        <h4>Session Allocation</h4>
+
+                        <table class="table table-bordered table-striped table-hover">
+
+                                <th class="info" style="background-color: #00FF00;">Student Name</th>
+                                <th class="info" style="background-color: #00FF00;">Tutor Name</th>
+                                
+                                <th colspan="2" class="info" style="background-color: #00FF00;">Time</th>
+                                <th class="info" style="background-color: #00FF00;">Date</th>
+                                <th class="info" style="background-color: #00FF00;">Operation</th>
+
+
+
+                                        {% for dri in session_allot  %}
+
+                                <tr>
+                                            <td>{{ dri.user.user.first_name }}</td>
+                                            <td>{{ dri.selected_tutor.user.first_name }}</td>
+                                            <form action="#" method="post" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <td><input type="time" name="allot_time" class="btn btn-success"></td>
+                                            <td colspan="2"><label>Fromdate</label>
+                                                <input type="date" name="fromdate" class="btn btn-success"><br>
+                                                <label>Todate</label><br>
+                                                <input type="date" name="todate" class="btn btn-success">
+                                                
+
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="id" value={{dri.id}} class="btn btn-success">
+                                                <input type="submit" value="Session Allot" class="btn btn-danger"> </td>
+
+
+
+                                </tr>
+                                        {% endfor %}
+                            </table> 
+          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- Contact Section End -->
+    
+
+</body>
+
+</html>

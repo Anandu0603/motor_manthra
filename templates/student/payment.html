@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOTOR MANTHRA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"> 
+<style>
+    body {
+        color: #000;
+        overflow-x: hidden;
+        height: 100%;
+        background-color: lightblue;
+        background-repeat: no-repeat;
+    }
+    
+    .card {
+        padding: 30px 25px 35px 50px;
+        border-radius: 30px;
+        box-shadow: 10px 14px 18px 10px #B71C1C;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .border-line {
+        border-right: 1px solid #BDBDBD;
+    }
+    
+    .text-sm {
+        font-size: 13px;
+        font-weight:bold;
+       
+    }
+    
+    .text-md {
+        font-size: 18px;
+       
+    }
+    
+    .image {
+        width: 60px;
+        height: 30px;
+    }
+    
+    ::placeholder {
+        color: grey;
+        opacity: 1;
+    }
+    
+    :-ms-input-placeholder {
+        color: grey;
+    }
+    
+    ::-ms-input-placeholder {
+        color: grey;
+    }
+    
+    input {
+        padding: 2px 0px;
+        border: none;
+        border-bottom: 1px solid lightgrey;
+        margin-bottom: 5px;
+        margin-top: 2px;
+        box-sizing: border-box;
+        color: #000;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    
+    input:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid #EF5350;
+        outline-width: 0;
+    }
+    
+    button:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        outline-width: 0;
+    }
+    
+    .btn-red {
+        background-color: #EF5350;
+        color: #fff;
+        padding: 8px 25px;
+        border-radius: 50px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        border: 2px solid #fff;
+    }
+    
+    .btn-red:hover {
+        box-shadow: 0 0 0 2px #EF5350;
+    }
+    
+    .btn-red:focus {
+        box-shadow: 0 0 0 2px #EF5350 !important;
+    }
+    
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+        background-color: #EF5350;
+    }
+    
+    @media screen and (max-width: 575px) {
+        .border-line {
+            border-right: none;
+            border-bottom: 1px solid #EEEEEE;
+        }
+    }
+    .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: absolute;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+      }
+      
+      /* The popup form - hidden by default */
+      .form-popup {
+        display: none;
+        position: absolute;
+        bottom: 20;
+        margin-top:106px;
+        right: 405px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+        width:736px;
+      }
+      
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 800px;
+        padding: 130px;
+        background-color: white;
+      }
+      
+      /* Full-width input fields */
+      .form-container input[type=text], .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+      
+      /* When the inputs get focus, do something */
+      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      
+      /* Set a style for the submit/login button */
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 50%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+      
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+        width: 50%;
+      }
+      
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      } 
+</style>
+</head>
+
+<body>
+    <center>
+        <div class="form-popup" id="myForm">
+            <div class="form-container">
+                <h2>OTP Verfication</h2>
+                <h5>Your Otp Is This :<strong><p id="demo"></p></strong></h5>
+            <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> 
+                <input class="m-2 text-center form-control rounded" type="text" id="N" maxlength="4"> 
+                {% comment %} <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1"> 
+                <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1"> 
+                <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1">  {% endcomment %}
+                
+            </div> 
+           
+              <button type="submit" class="btn" onclick="checknumber()">Verify OTP</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              <p id="verify"></p>
+        </dive>
+          </div></center>
+
+    <div class="container-fluid px-1 px-md-2 px-lg-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-sm-11">
+                <div class="card border-0">
+                    <div class="row justify-content-center">
+                        <h3 class="mb-4">Payment Method</h3>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 border-line pb-3">
+                            <div class="form-group">{% for dri in pay_ext  %}
+                               <p class="text-muted text-sm mb-0">{{ dri.student.user.first_name }}</p>
+                                <p class="text-muted text-sm mb-0">{{ dri.student.address }}</p>
+                                <p class="text-muted text-sm mb-0">{{ dri.student.phone }}</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <p class="text-muted text-sm mb-0">Name on the card</p>
+                                <input type="text" name="name" placeholder="Name" size="15">
+                            </div>
+                            <div class="form-group">
+                                <p class="text-muted text-sm mb-0">Card Number</p>
+                                <div class="row px-3">
+                                    <input type="text" name="card-num" placeholder="0000 0000 0000 0000" size="18" id="cr_no" minlength="19" maxlength="19">
+                                    <p class="mb-0 ml-3">/</p>
+                                   <img class="image ml-1" src="https://i.imgur.com/WIAP9Ku.jpg" width="50px"> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p class="text-muted text-sm mb-0">Expiry date</p>
+                                <input type="text" name="exp" placeholder="MM/YY" size="6" id="exp" minlength="5" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <p class="text-muted text-sm mb-0">CVV/CVC</p>
+                                <input type="password" name="cvv" placeholder="000" size="1" minlength="3" maxlength="3">
+                            </div>
+                            <div class="form-group mb-0">
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input id="chk1" type="checkbox" name="chk" class="custom-control-input" checked> 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5 text-sm-center justify-content-center pt-4 pb-4">
+                            <small class="text-sm text-muted" id="sv">Admin<br>
+                                BANK : AM BANK CYBER PRISM<br>
+                                IFSC : ACP0000000<br>
+                                BRANCH : MUVATTUPUZHA<br>
+                                CONTACT : 1010101010<br>
+                                EMAIL ID : Admin@gmail.com
+                            </small>
+                            <h5 class="mb-5"></h5>
+                            <small class="text-sm text-muted">Payment amount</small>
+                            <div class="row px-3 justify-content-sm-center">
+                                <h2 class=""><span style='font-size:35px;'>&#8377;</span>&nbsp;<span class="text-danger">{{ dri.price }}</span></h2>
+                            </div>
+                            <p id="verify"></p>
+                            <button type="submit" onclick="openForm()" class="btn btn-red text-center mt-4">PAY</button>{% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        
+            let x = Math.floor((Math.random() * 10000) + 1);
+            document.getElementById("demo").innerHTML = x;
+            function checknumber(){
+                var number=Number(document.getElementById("N").value);    
+                if(x == number)
+                    document.getElementById("verify").innerHTML = "Otp Verified";
+                else
+                {
+                    document.getElementById("verify").innerHTML = "Otp not Verified";
+    
+                }
+        }
+            
+        </script>
+
+    </body>
+                
+</html>
